@@ -1,4 +1,4 @@
-name: Consistency proof
+name: check test
 
 on:
   schedule:
@@ -16,3 +16,9 @@ jobs:
     uses: sigstore/rekor-monitor/.github/workflows/reusable_monitoring.yml@main
     with:
       file_issue: true
+      config: |
+        monitoredValues:
+          subjects:
+            - dangerzone-release-key@freedom\.press
+          fingerprints:
+            - 089c5e9a2c90336b87f529af528db2ec14caf36695c5ab80f14f0e735c730a1b
