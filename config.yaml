@@ -1,0 +1,48 @@
+# # Optional: Specify start and end log indices for searching
+# startIndex: 1000
+# endIndex: 2000
+
+# Values to monitor for
+monitoredValues:
+  # Certificate identities to monitor (subject and optional issuers)
+  # certIdentities:
+  #   # certSubject is a regular expression
+  #   - certSubject: user@domain\.com
+  #   - certSubject: otheruser@domain\.com
+  #     issuers:
+  #       # issuers are regular expressions
+  #       - https://accounts\.google\.com
+  #       - https://github\.com/login
+  #   - certSubject: https://github\.com/actions/starter-workflows/blob/main/\.github/workflows/lint\.yaml@.*
+  #     issuers:
+  #       - https://token\.actions\.githubusercontent\.com
+
+  # Non-certificate subjects (for SSH, PGP keys, etc.)
+  # subjects are regular expressions
+  subjects:
+    - dangerzone-release-key@freedom\.press
+
+  # Key/certificate fingerprints to monitor
+  fingerprints:
+    - 089c5e9a2c90336b87f529af528db2ec14caf36695c5ab80f14f0e735c730a1b
+
+  # # Fulcio extensions to monitor
+  # fulcioExtensions:
+  #   build-config-uri:
+  #     - https://example.com/owner/repository/build-config.yml
+
+  # # Custom OID extensions
+  # customExtensions:
+  #   - objectIdentifier: 1.3.6.1.4.1.57264.1.9
+  #     extensionValues: https://github.com/slsa-framework/slsa-github-generator/.github/workflows/generator_container_slsa3.yml@v1.4.0
+
+# Optional: Output file for found identities
+outputIdentities: identities.txt
+# Optional: Output format for found identities (`text` or `json`)
+outputIdentitiesFormat: text
+
+# Optional: Output file for last checkpoint
+logInfoFile: logInfo.txt
+
+# Optional: Identity metadata output file
+identityMetadataFile: metadata.json
